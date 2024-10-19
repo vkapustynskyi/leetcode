@@ -37,11 +37,16 @@ public class AddTwoNumbers {
             ListNode root = new ListNode();
             ListNode temp = root;
             while (l1 != null || l2 != null) {
-                int sum = (l1 == null ? 0 : l1.val) + (l2 == null ? 0 : l2.val) + (carry == 0 ? 0 : carry--);
-                temp.next = new ListNode(sum % 10);
-                if (sum >= 10) {
-                    carry += 1;
+                int sum = 0;
+                if (l1 == null) {
+                    sum = l2.val + carry;
+                } else if (l2 == null) {
+                    sum = l1.val + carry;
+                } else {
+                    sum = l1.val + l2.val + carry;
                 }
+                temp.next = new ListNode(sum % 10);
+                carry = sum / 10;
                 temp = temp.next;
                 l1 = l1 != null ? l1.next : null;
                 l2 = l2 != null ? l2.next : null;
