@@ -7,7 +7,7 @@ public class IntegerToRoman {
         System.out.println(k);
     }
 
-    public static String intToRoman(int num) {
+    private static String intToRoman(int num) {
         StringBuilder output = new StringBuilder();
         String[] symbols = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
         int[] integers = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};

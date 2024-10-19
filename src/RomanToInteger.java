@@ -7,7 +7,7 @@ public class RomanToInteger {
         System.out.println(k);
     }
 
-    public static int romanToInt(String s) {
+    private static int romanToInt(String s) {
         int output = 0;
         int lastIndex = 0;
         char[] input = s.toCharArray();
